@@ -1,0 +1,54 @@
+.addPostForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.input {
+  height: 34px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  border-radius: 3px;
+  border: solid 1px #cfbbef;
+  padding: 5px 10px;
+}
+
+.textarea {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  border-radius: 3px;
+  border: solid 1px #cfbbef;
+  padding: 5px 10px;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border: solid 1px #764abc;
+}
+
+.button {
+  width: 100px;
+  align-items: center;
+  background-color: #cfbbef;
+  border-radius: 3px;
+  border: none;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #be9ff0;
+}

@@ -1,0 +1,31 @@
+.postsList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.post {
+  width: 100%;
+  box-shadow: 2px 2px 12px #be9ff0;
+  border-radius: 6px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.postTitle {
+  font-size: 20px;
+  color: #764abc;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.postContent {
+  width: 100%;
+  font-size: 18px;
+  margin: 0;
+}
