@@ -1,7 +1,11 @@
 import './App.css';
+
 import { Routes, Route } from 'react-router-dom';
-import PostsList from '../PostsList/PostsList'
+
 import Navbar from '../Navbar/Navbar';
+import PostsList from '../PostsList/PostsList';
+import SinglePostPage from '../SinglePostPage/SinglePostPage';
+import EditPostForm from '../EditPostForm/EditPostForm';
 
 function App() {
 
@@ -10,7 +14,9 @@ function App() {
       <Navbar />
       <div className='page__content'>
         <Routes>
-          <Route path='/post' element={<PostsList />} />
+          <Route path='/posts' element={<PostsList />} />
+          <Route path='/posts/:postId' element={<SinglePostPage />} />
+          <Route path='/editPost/:postId' element={<EditPostForm />} />
         </Routes>
       </div>
     </div>
