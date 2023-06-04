@@ -20,11 +20,18 @@
   box-sizing: border-box;
 }
 
+.postItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 .postTitle {
   font-size: 20px;
   color: #764abc;
   margin: 0;
-  margin-bottom: 20px;
+
 }
 
 .postContent {

@@ -1,9 +1,9 @@
 import classes from './SinglePostPage.module.css';
 
 import { useParams, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-
-import { useSelector } from 'react-redux'
+import PostAuthor from '../PostAuthor/PostAuthor';
 
 const SinglePostPage = () => {
   const params = useParams()
@@ -24,7 +24,10 @@ const SinglePostPage = () => {
   return (
     <section className={classes.singlePost}>
       <article className={classes.post}>
-        <h2 className={classes.title}>{post.title}</h2>
+        <div className={classes.postItem}>
+          <h2 className={classes.title}>{post.title}</h2>
+          <PostAuthor userId={post.user} />
+        </div>
         <p className={classes.postContent}>{post.content}</p>
         <Link to={`/editPost/${post.id}`} className={classes.viewButton}>
           Edit Post

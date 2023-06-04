@@ -12,14 +12,21 @@
 }
 
 .title {
-  font-size: 30px;
+  font-size: 20px;
   margin: 20px 0;
 }
 
 .postContent {
   width: 100%;
-  font-size: 20px;
+  font-size: 16px;
   margin: 0;
+}
+
+.postItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .viewButton {

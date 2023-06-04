@@ -17,6 +17,7 @@
 }
 
 .input {
+  align-items: center;
   height: 34px;
   font-weight: 500;
   font-size: 13px;
@@ -35,8 +36,19 @@
   padding: 5px 10px;
 }
 
+.inputSelect {
+  height: 44px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  border-radius: 3px;
+  border: solid 1px #cfbbef;
+  padding: 5px 10px;
+}
+
 .input:focus,
-.textarea:focus {
+.textarea:focus,
+.inputSelect:focus {
   outline: none;
   border: solid 1px #764abc;
 }
@@ -44,12 +56,20 @@
 .button {
   width: 100px;
   align-items: center;
-  background-color: #cfbbef;
+  background-color: #be9ff0;
   border-radius: 3px;
   border: none;
   padding: 8px 10px;
   cursor: pointer;
 }
+
 .button:hover {
-  background-color: #be9ff0;
+  background-color: #764abc;
 }
+
+.buttonDisabled,
+.buttonDisabled:hover {
+  background-color: #cfbbef;
+  cursor: default;
+}
+
