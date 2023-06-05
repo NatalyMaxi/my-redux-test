@@ -4,8 +4,9 @@
 }
 
 .title {
-  font-size: 30px;
-  margin: 30px 0;
+  font-size: 25px;
+  color: #764abc;
+  margin: 20px 0;
 }
 
 .form {
@@ -16,6 +17,10 @@
   max-width: 700px;
 }
 
+.label {
+  color: #6b6b7a;
+}
+
 .input {
   align-items: center;
   height: 34px;
@@ -23,6 +28,7 @@
   font-size: 13px;
   line-height: 16px;
   border-radius: 3px;
+  color: #6b6b7a;
   border: solid 1px #cfbbef;
   padding: 5px 10px;
 }
@@ -32,6 +38,7 @@
   font-size: 13px;
   line-height: 16px;
   border-radius: 3px;
+  color: #6b6b7a;
   border: solid 1px #cfbbef;
   padding: 5px 10px;
 }
@@ -42,6 +49,7 @@
   font-size: 13px;
   line-height: 16px;
   border-radius: 3px;
+  color: #6b6b7a;
   border: solid 1px #cfbbef;
   padding: 5px 10px;
 }
@@ -72,4 +80,3 @@
   background-color: #cfbbef;
   cursor: default;
 }
-

@@ -40,6 +40,7 @@ const EditPostForm = () => {
           type='text'
           id='postTitle'
           name='postTitle'
+          spellheck='true'
           value={title}
           onChange={onTitleChanged}
         />
@@ -48,6 +49,7 @@ const EditPostForm = () => {
           className={classes.textarea}
           id='postContent'
           name='postContent'
+          spellheck='true'
           value={content}
           onChange={onContentChanged}
         />

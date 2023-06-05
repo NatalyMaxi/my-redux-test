@@ -31,30 +31,45 @@ const AddPostForm = () => {
     <section className={classes.addPostForm}>
       <h2 className={classes.title}>Add a New Post</h2>
       <form className={classes.form}>
-        <label htmlFor='postTitle'>Post Title:</label>
+        <label
+          className={classes.label}
+          htmlFor='postTitle'>
+          Post Title:
+        </label>
         <input
           className={classes.input}
           type='text'
           id='postTitle'
           name='postTitle'
+          spellheck='true'
+          maxLength='70'
           value={title}
           onChange={onTitleChanged}
         />
-        <label htmlFor='postContent'>Content:</label>
+        <label
+          htmlFor='postContent'
+          className={classes.label}>
+          Content:
+        </label>
         <textarea
           className={classes.textarea}
           id='postContent'
           name='postContent'
+          spellheck='true'
           value={content}
           onChange={onContentChanged}
         />
-        <label htmlFor="postAuthor">Author:</label>
+        <label
+          htmlFor='postAuthor'
+          className={classes.label}>
+          Author:
+        </label>
         <select
           className={classes.inputSelect}
-          id="postAuthor"
+          id='postAuthor'
           value={userId}
           onChange={onAuthorChanged}>
-          <option value=""></option>
+          <option value=''></option>
           {
             users.map(user => (
               <option key={user.id} value={user.id}>

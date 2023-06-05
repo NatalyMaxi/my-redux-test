@@ -1,35 +1,50 @@
 .singlePost {
   width: 100%;
+  padding-top: 20px;
 }
 
 .post {
   display: flex;
   flex-direction: column;
-  border-radius: 6px;
-  box-shadow: 2px 2px 12px #be9ff0;
-  margin-top: 20px;
-  padding: 10px;
-}
-
-.title {
-  font-size: 20px;
-  margin: 20px 0;
-}
-
-.postContent {
   width: 100%;
-  font-size: 16px;
-  margin: 0;
+  box-shadow: 2px 2px 12px #be9ff0;
+  border-radius: 6px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.postItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .postItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  min-width: 100px;
+  width: max-content;
+  gap: 15px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #be9ff0;
+  padding: 2px 4px;
 }
 
-.viewButton {
+.postTitle {
+  font-size: 18px;
+  color: #6b6b7a;
+  margin: 0;
+}
+
+.postContent {
+  width: 100%;
+  font-size: 16px;
+  margin: 13px 0;
+  color: #6b6b7a;
+}
+
+.editButton {
   display: flex;
   align-self: flex-end;
   width: max-content;
@@ -38,10 +53,9 @@
   color: #fff;
   border-radius: 3px;
   padding: 3px 4px;
-  margin: 10px 0 20px 0;
   cursor: pointer;
 }
 
-.viewButton:hover {
+.editButton:hover {
   background-color: #764abc;
 }
