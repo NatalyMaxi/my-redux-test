@@ -29,7 +29,7 @@
   line-height: 16px;
   border-radius: 3px;
   color: #6b6b7a;
-  border: solid 1px #cfbbef;
+  border: solid 1px #c8b6e4;
   padding: 5px 10px;
 }
 
@@ -39,7 +39,7 @@
   line-height: 16px;
   border-radius: 3px;
   color: #6b6b7a;
-  border: solid 1px #cfbbef;
+  border: solid 1px #c8b6e4;
   padding: 5px 10px;
 }
 
@@ -50,7 +50,7 @@
   line-height: 16px;
   border-radius: 3px;
   color: #6b6b7a;
-  border: solid 1px #cfbbef;
+  border: solid 1px #c8b6e4;
   padding: 5px 10px;
 }
 
@@ -64,7 +64,8 @@
 .button {
   width: 100px;
   align-items: center;
-  background-color: #be9ff0;
+  background-color: #9a7ace;
+  box-shadow: 3px 4px 3px #764abc;
   border-radius: 3px;
   border: none;
   padding: 8px 10px;
@@ -77,6 +78,7 @@
 
 .buttonDisabled,
 .buttonDisabled:hover {
-  background-color: #cfbbef;
+  background-color: #c8b6e4;
+  box-shadow: 2px 3px 2px #9a7ace;
   cursor: default;
 }

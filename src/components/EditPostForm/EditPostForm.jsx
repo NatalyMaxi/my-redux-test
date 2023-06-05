@@ -30,6 +30,8 @@ const EditPostForm = () => {
     }
   }
 
+  const canSave = Boolean(title) && Boolean(content)
+
   return (
     <section className={classes.editPostForm}>
       <h2 className={classes.title}>Edit Post</h2>
@@ -54,9 +56,10 @@ const EditPostForm = () => {
           onChange={onContentChanged}
         />
         <button
-          className={classes.button}
+          className={!canSave ? `${classes.button} ${classes.buttonDisabled}` : classes.button}
           type='button'
-          onClick={onSavePostClicked}>
+          onClick={onSavePostClicked}
+          disabled={!canSave}>
           Save Post
         </button>
       </form>
