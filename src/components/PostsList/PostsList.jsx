@@ -1,15 +1,17 @@
 import classes from './PostsList.module.css';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import AddPostForm from '../AddPostForm/AddPostForm';
 import PostAuthor from '../PostAuthor/PostAuthor';
 import TimeAgo from '../TimeAgo/TimeAgo';
 import ReactionButtons from '../ReactionButtons/ReactionButtons';
+import { postDelete } from '../../redux/posts/postsSlice';
 
 const PostsList = () => {
   const posts = useSelector(state => state.posts)
+  const dispatch = useDispatch()
 
   //сортировка по времени отправки сообщения
   const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date))
@@ -24,9 +26,14 @@ const PostsList = () => {
             <article className={classes.post} key={post.id}>
               <div className={classes.postItems}>
                 <h3 className={classes.postTitle}>{post.title}</h3>
+                <button onClick={() => {
+
+                  dispatch(postDelete(post))
+                }}>удалить</button>
                 <div className={classes.postItem}>
                   <PostAuthor userId={post.user} />
                   <TimeAgo timestamp={post.date} />
+
                 </div>
               </div>
               <p className={classes.postContent}>{post.content.substring(0, 130)}</p>
