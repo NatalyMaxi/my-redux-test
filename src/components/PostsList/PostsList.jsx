@@ -20,31 +20,40 @@ const PostsList = () => {
     <>
       <AddPostForm />
       <section className={classes.postsList}>
-        <h2 className={classes.title}>Posts</h2>
-        {
-          orderedPosts.map(post => (
-            <article className={classes.post} key={post.id}>
-              <div className={classes.postItems}>
-                <h3 className={classes.postTitle}>{post.title}</h3>
-                <button onClick={() => {
 
-                  dispatch(postDelete(post))
-                }}>удалить</button>
-                <div className={classes.postItem}>
-                  <PostAuthor userId={post.user} />
-                  <TimeAgo timestamp={post.date} />
+        {orderedPosts.length !== 0
 
-                </div>
-              </div>
-              <p className={classes.postContent}>{post.content.substring(0, 130)}</p>
-              <Link to={`/posts/${post.id}`}
-                className={classes.viewButton}
-                type='button'>
-                View Post
-              </Link>
-              <ReactionButtons post={post} />
-            </article>
-          ))
+          ? <div>
+            <h2 h2 className={classes.title}>Posts</h2>
+            {
+              orderedPosts.map(post => (
+                <article className={classes.post} key={post.id}>
+                  <div className={classes.postItems}>
+                    <h3 className={classes.postTitle}>{post.title}</h3>
+                    <button onClick={() => {
+
+                      dispatch(postDelete(post))
+                    }}>удалить</button>
+                    <div className={classes.postItem}>
+                      <PostAuthor userId={post.user} />
+                      <TimeAgo timestamp={post.date} />
+
+                    </div>
+                  </div>
+                  <p className={classes.postContent}>{post.content.substring(0, 130)}</p>
+                  <Link to={`/posts/${post.id}`}
+                    className={classes.viewButton}
+                    type='button'>
+                    View Post
+                  </Link>
+                  <ReactionButtons post={post} />
+                </article>
+              ))
+            }
+          </div>
+
+          :
+          <h3 className={classes.title}>Posts are missing</h3>
         }
       </section>
     </>
@@ -53,3 +62,7 @@ const PostsList = () => {
 }
 
 export default PostsList;
+
+
+
+
