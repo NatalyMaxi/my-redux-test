@@ -12,16 +12,21 @@ import MySelect from '../MySelect/MySelect';
 import { useState } from 'react';
 
 const PostsList = () => {
-  const [selectedSort, setSelectedSort] = useState('date')
+  const [selectedSort, setSelectedSort] = useState('')
   const posts = useSelector(state => state.posts)
   const dispatch = useDispatch()
 
   const sortPosts = (sort) => {
     setSelectedSort(sort)
-    console.log(sort)
   }
 
-  const orderedPosts = posts.slice().sort((a, b) => b[selectedSort].localeCompare(a[selectedSort]))
+  const getSortingPost = () => {
+    if (selectedSort) {
+      return posts.slice().sort((a, b) => b[selectedSort].localeCompare(a[selectedSort]))
+    }
+    return posts;
+  }
+  const orderedPosts = getSortingPost()
 
   return (
     <>
