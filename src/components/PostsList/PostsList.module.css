@@ -1,3 +1,10 @@
+.postsPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 25px;
+}
+
 .postsList {
   display: flex;
   flex-direction: column;

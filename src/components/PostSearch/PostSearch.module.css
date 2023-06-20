@@ -1,6 +1,6 @@
-.select {
+.postSearch {
   align-items: center;
-  width: 180px;
+  flex-basis: 50%;
   height: 44px;
   font-weight: 500;
   font-size: 15px;
@@ -9,23 +9,11 @@
   color: #fff;
   border: none;
   border-radius: 3px;
-  padding: 5px 2px;
+  padding: 5px 10px;
   box-sizing: border-box;
 }
 
-.select:focus {
+.postSearch:focus {
   outline: none;
   border: solid 1px #764abc;
-}
-
-.option {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #373745;
-  background: #fff;
-}
-
-.optionDisabled {
-  color: #b1b1b7;
 }

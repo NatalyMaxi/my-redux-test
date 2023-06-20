@@ -9,10 +9,12 @@ import TimeAgo from '../TimeAgo/TimeAgo';
 import ReactionButtons from '../ReactionButtons/ReactionButtons';
 import { postDelete } from '../../redux/posts/postsSlice';
 import MySelect from '../MySelect/MySelect';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import PostSearch from '../PostSearch/PostSearch';
 
 const PostsList = () => {
   const [selectedSort, setSelectedSort] = useState('')
+  const [searchQuery, setSearchQuery] = useState('')
   const posts = useSelector(state => state.posts)
   const dispatch = useDispatch()
 
@@ -20,35 +22,45 @@ const PostsList = () => {
     setSelectedSort(sort)
   }
 
-  const getSortingPost = () => {
+  const orderedPosts = useMemo(() => {
+    console.log('Отработала функция')
     if (selectedSort) {
       return posts.slice().sort((a, b) => b[selectedSort].localeCompare(a[selectedSort]))
     }
     return posts;
-  }
-  const orderedPosts = getSortingPost()
+  }, [selectedSort, posts])
+
+  const sortedAndSearchedPosts = useMemo(() => {
+    return orderedPosts.filter(post => post.title.toLowerCase().includes(searchQuery))
+  }, [searchQuery, orderedPosts])
 
   return (
-    <>
+    <section className={classes.postsPage}>
       <AddPostForm />
+      <div className={classes.postItems}>
+        <PostSearch
+          type='search'
+          value={searchQuery}
+          onChange={(evt) => setSearchQuery(evt.target.value)}
+          placeholder='Поиск...' />
+        <MySelect
+          value={selectedSort}
+          onChange={sortPosts}
+          defaultValue='Сортировать по'
+          options={[
+            { value: 'date', name: 'времени' },
+            { value: 'title', name: 'заголовку' },
+            { value: 'content', name: 'содержанию' }
+          ]}
+        />
+      </div>
+
       <section className={classes.postsList}>
-        {orderedPosts.length !== 0
+        {sortedAndSearchedPosts.length !== 0
           ? <div>
-            <div className={classes.container}>
-              <h2 className={classes.title}>Posts</h2>
-              <MySelect
-                value={selectedSort}
-                onChange={sortPosts}
-                defaultValue='Сортировка по'
-                options={[
-                  { value: 'date', name: 'по времени' },
-                  { value: 'title', name: 'по заголовку' },
-                  { value: 'content', name: 'по содержанию' }
-                ]}
-              />
-            </div>
+            <h2 className={classes.title}>Posts</h2>
             {
-              orderedPosts.map(post => (
+              sortedAndSearchedPosts.map(post => (
                 <article className={classes.post} key={post.id}>
                   <div className={classes.postItems}>
                     <h3 className={classes.postTitle}>{post.title}</h3>
@@ -88,7 +100,7 @@ const PostsList = () => {
           <h3 className={classes.title}>Posts are missing</h3>
         }
       </section>
-    </>
+    </section>
   )
 }
 
