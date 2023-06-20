@@ -5,6 +5,12 @@
   width: 100%;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .title {
   font-size: 25px;
   margin: 20px 0;
@@ -15,10 +21,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  box-shadow: 2px 2px 8px #9a7ace;
+  box-shadow: 2px 1px 4px #9a7ace;
   border-radius: 6px;
-  padding: 8px;
+  padding: 15px;
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 .postItems {
@@ -35,7 +42,6 @@
   width: max-content;
   gap: 15px;
   border-radius: 3px;
-  box-shadow: 2px 3px 2px #c8b6e4;
   padding: 2px 4px;
 }
 
@@ -52,19 +58,37 @@
   color: #6b6b7a;
 }
 
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-end;
+}
+
 .viewButton {
   display: flex;
   align-self: flex-end;
   width: max-content;
   text-decoration: none;
-  background-color: #9a7ace;
-  box-shadow: 2px 3px 2px #764abc;
-  color: #fff;
-  border-radius: 3px;
-  padding: 3px 4px;
-  cursor: pointer;
 }
 
 .viewButton:hover {
   background-color: #764abc;
+}
+
+.button {
+  background-color: #fff;
+  box-shadow: 1px 1px #c8b6e4;
+  color: #764abc;
+  border: 1px solid #c8b6e4;
+  width: 100px;
+  border-radius: 3px;
+  padding: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #764abc;
+  color: #fff;
 }

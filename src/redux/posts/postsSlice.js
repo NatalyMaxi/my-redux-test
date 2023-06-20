@@ -67,6 +67,8 @@ const postsSlice = createSlice({
     },
     postDelete(state, action) {
       const { id } = action.payload
+      console.log(state)
+      console.log(state.posts)
       // state = state.filter(post => post.id !== id)
       state.splice(state.findIndex((post) => post.id === id), 1);
     },

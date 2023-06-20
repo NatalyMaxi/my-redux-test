@@ -50,23 +50,27 @@
 }
 
 .button {
+  background-color: #fff;
+  box-shadow: 1px 1px #c8b6e4;
+  color: #764abc;
+  border: 1px solid #c8b6e4;
   width: 100px;
-  align-items: center;
-  background-color: #9a7ace;
-  box-shadow: 3px 4px 3px #764abc;
   border-radius: 3px;
-  border: none;
-  padding: 8px 10px;
+  padding: 4px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .button:hover {
   background-color: #764abc;
+  color: #fff;
 }
 
 .buttonDisabled,
 .buttonDisabled:hover {
-  background-color: #c8b6e4;
-  box-shadow: 2px 3px 2px #9a7ace;
+  background-color: #fff;
+  border: 1px solid #c8b6e4;
+  color: #764abc;
+  box-shadow: none;
   cursor: default;
 }

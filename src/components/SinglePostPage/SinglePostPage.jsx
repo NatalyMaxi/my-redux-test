@@ -34,10 +34,17 @@ const SinglePostPage = () => {
           </div>
         </div>
         <p className={classes.postContent}>{post.content}</p>
-        <Link to={`/editPost/${post.id}`} className={classes.editButton}>
-          Edit Post
-        </Link>
-        <ReactionButtons post={post} />
+        <div className={classes.postItems}>
+          <ReactionButtons post={post} />
+          <Link to={`/editPost/${post.id}`} className={classes.editButton}>
+            <button
+              className={classes.button}
+              type='button'
+            >
+              Edit Post
+            </button>
+          </Link>
+        </div>
       </article>
     </section>
   )
