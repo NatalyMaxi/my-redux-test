@@ -4,8 +4,8 @@
 }
 
 .reactionButton {
-  background-color: #fff;
-  box-shadow: 2px 1px 2px #c8b6e4;
+  background-color: var(--main-white);
+  box-shadow: 2px 1px 2px var(--background-light-purple);
   border: none;
   border-radius: 3px;
   cursor: pointer;

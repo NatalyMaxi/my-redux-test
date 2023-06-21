@@ -1,5 +1,5 @@
 .time {
   font-size: 13px;
-  color: #6b6b7a;
+  color: var(--text-gray);
   margin: 0;
 }

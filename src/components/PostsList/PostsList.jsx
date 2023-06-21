@@ -1,60 +1,44 @@
 import classes from './PostsList.module.css';
 
 import { useDispatch, useSelector } from 'react-redux';
+import { postDelete } from '../../redux/posts/postsSlice';
+
 import { Link } from 'react-router-dom';
+import { useState, useMemo } from 'react';
 
 import AddPostForm from '../AddPostForm/AddPostForm';
 import PostAuthor from '../PostAuthor/PostAuthor';
 import TimeAgo from '../TimeAgo/TimeAgo';
 import ReactionButtons from '../ReactionButtons/ReactionButtons';
-import { postDelete } from '../../redux/posts/postsSlice';
-import MySelect from '../MySelect/MySelect';
-import { useState, useMemo } from 'react';
-import PostSearch from '../PostSearch/PostSearch';
+import FilteringPosts from '../FilteringPosts/FilteringPosts';
+import MyModal from '../UI/MyModal/MyModal';
 
 const PostsList = () => {
-  const [selectedSort, setSelectedSort] = useState('')
-  const [searchQuery, setSearchQuery] = useState('')
+  const [filter, setFilter] = useState({ sort: '', query: '' })
+  const [visible, setVisible] = useState(false)
   const posts = useSelector(state => state.posts)
   const dispatch = useDispatch()
 
-  const sortPosts = (sort) => {
-    setSelectedSort(sort)
-  }
-
   const orderedPosts = useMemo(() => {
-    console.log('Отработала функция')
-    if (selectedSort) {
-      return posts.slice().sort((a, b) => b[selectedSort].localeCompare(a[selectedSort]))
+    if (filter.sort) {
+      return posts.slice().sort((a, b) => b[filter.sort].localeCompare(a[filter.sort]))
     }
     return posts;
-  }, [selectedSort, posts])
+  }, [filter.sort, posts])
 
   const sortedAndSearchedPosts = useMemo(() => {
-    return orderedPosts.filter(post => post.title.toLowerCase().includes(searchQuery))
-  }, [searchQuery, orderedPosts])
+    return orderedPosts.filter(post => post.title.toLowerCase().includes(filter.query.toLowerCase()))
+  }, [filter.query, orderedPosts])
 
   return (
     <section className={classes.postsPage}>
-      <AddPostForm />
+      <button className={classes.button} onClick={() => setVisible(true)}>vjl</button>
+      <MyModal visible={visible} setVisible={setVisible}>
+        <AddPostForm setVisible={setVisible} />
+      </MyModal>
       <div className={classes.postItems}>
-        <PostSearch
-          type='search'
-          value={searchQuery}
-          onChange={(evt) => setSearchQuery(evt.target.value)}
-          placeholder='Поиск...' />
-        <MySelect
-          value={selectedSort}
-          onChange={sortPosts}
-          defaultValue='Сортировать по'
-          options={[
-            { value: 'date', name: 'времени' },
-            { value: 'title', name: 'заголовку' },
-            { value: 'content', name: 'содержанию' }
-          ]}
-        />
+        <FilteringPosts filter={filter} setFilter={setFilter} />
       </div>
-
       <section className={classes.postsList}>
         {sortedAndSearchedPosts.length !== 0
           ? <div>

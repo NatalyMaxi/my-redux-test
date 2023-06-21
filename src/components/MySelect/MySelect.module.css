@@ -5,8 +5,8 @@
   font-weight: 500;
   font-size: 15px;
   line-height: 16px;
-  background: #764abc;
-  color: #fff;
+  background: var(--background-dark-purple);
+  color: var(--main-white);
   border: none;
   border-radius: 3px;
   padding: 5px 2px;
@@ -15,17 +15,17 @@
 
 .select:focus {
   outline: none;
-  border: solid 1px #764abc;
+  border: solid 1px var(--background-dark-purple);
 }
 
 .option {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #373745;
-  background: #fff;
+  color: var(--text-dark-grey);
+  background: var(--main-white);
 }
 
 .optionDisabled {
-  color: #b1b1b7;
+  color: var(--text-light-grey);
 }

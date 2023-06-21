@@ -1,76 +1,19 @@
 .editPostForm {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .title {
   font-size: 25px;
-  color: #764abc;
+  color: var(--background-dark-purple);
   margin: 20px 0;
+  align-self: center;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   width: 100%;
-  max-width: 700px;
-}
-
-.label {
-  color: #6b6b7a;
-}
-
-.input {
-  align-items: center;
-  height: 34px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  border-radius: 3px;
-  color: #6b6b7a;
-  border: solid 1px #c8b6e4;
-  padding: 5px 10px;
-}
-
-.textarea {
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  border-radius: 3px;
-  color: #6b6b7a;
-  border: solid 1px #c8b6e4;
-  padding: 5px 10px;
-}
-
-.input:focus,
-.textarea:focus {
-  outline: none;
-  border: solid 1px #764abc;
-}
-
-.button {
-  background-color: #fff;
-  box-shadow: 1px 1px #c8b6e4;
-  color: #764abc;
-  border: 1px solid #c8b6e4;
-  width: 100px;
-  border-radius: 3px;
-  padding: 4px;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-.button:hover {
-  background-color: #764abc;
-  color: #fff;
-}
-
-.buttonDisabled,
-.buttonDisabled:hover {
-  background-color: #fff;
-  border: 1px solid #c8b6e4;
-  color: #764abc;
-  box-shadow: none;
-  cursor: default;
 }

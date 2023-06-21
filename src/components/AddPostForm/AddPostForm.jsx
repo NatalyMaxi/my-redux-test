@@ -3,9 +3,15 @@ import classes from './AddPostForm.module.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { postAdded } from '../../redux/posts/postsSlice'
+import { postAdded } from '../../redux/posts/postsSlice';
 
-const AddPostForm = () => {
+import Input from '../UI/inputFields/Input/Input';
+import Label from '../UI/inputFields/Label/Label';
+import Textarea from '../UI/inputFields/Textarea/Textarea';
+import Select from '../UI/inputFields/Select/Select';
+import ButtonSubmit from '../UI/button/ButtonSubmit/ButtonSubmit';
+
+const AddPostForm = ({ setVisible }) => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [userId, setUserId] = useState('')
@@ -22,6 +28,7 @@ const AddPostForm = () => {
       dispatch(postAdded(title, content, userId))
       setTitle('')
       setContent('')
+      setVisible(false)
     }
   }
 
@@ -31,13 +38,8 @@ const AddPostForm = () => {
     <section className={classes.addPostForm}>
       <h2 className={classes.title}>Add a New Post</h2>
       <form className={classes.form}>
-        <label
-          className={classes.label}
-          htmlFor='postTitle'>
-          Post Title:
-        </label>
-        <input
-          className={classes.input}
+        <Label htmlFor='postTitle'>Post Title:</Label>
+        <Input
           type='text'
           id='postTitle'
           name='postTitle'
@@ -46,45 +48,34 @@ const AddPostForm = () => {
           value={title}
           onChange={onTitleChanged}
         />
-        <label
-          htmlFor='postContent'
-          className={classes.label}>
-          Content:
-        </label>
-        <textarea
-          className={classes.textarea}
+        <Label htmlFor='postContent'>Content:</Label>
+        <Textarea
           id='postContent'
           name='postContent'
           spellheck='true'
           value={content}
           onChange={onContentChanged}
         />
-        <label
-          htmlFor='postAuthor'
-          className={classes.label}>
-          Author:
-        </label>
-        <select
-          className={classes.inputSelect}
+        <Label htmlFor='postAuthor'>Author:</Label>
+        <Select
           id='postAuthor'
           value={userId}
           onChange={onAuthorChanged}>
-          <option value=''></option>
+          <option className={classes.option} disabled value='' />
           {
             users.map(user => (
-              <option key={user.id} value={user.id}>
+              <option className={classes.option} key={user.id} value={user.id}>
                 {user.name}
               </option>
             ))
           }
-        </select>
-        <button
-          className={!canSave ? `${classes.button} ${classes.buttonDisabled}` : classes.button}
-          type='button'
+        </Select>
+        <ButtonSubmit
+          type='submit'
           onClick={onSavePostClicked}
-          disabled={!canSave}>
+          disabled={canSave ? false : true}>
           Save Post
-        </button>
+        </ButtonSubmit>
       </form>
     </section>
   )

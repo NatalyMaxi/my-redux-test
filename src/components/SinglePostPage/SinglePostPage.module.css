@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  box-shadow: 2px 2px 4px #9a7ace;
+  box-shadow: 2px 2px 4px var(--background-purple);
   border-radius: 6px;
   padding: 15px;
   box-sizing: border-box;
@@ -32,7 +32,7 @@
 
 .postTitle {
   font-size: 18px;
-  color: #6b6b7a;
+  color: var(--text-gray);
   margin: 0;
 }
 
@@ -40,7 +40,7 @@
   width: 100%;
   font-size: 16px;
   margin: 13px 0;
-  color: #6b6b7a;
+  color: var(--text-gray);
 }
 
 .editButton {
@@ -49,10 +49,10 @@
 }
 
 .button {
-  background-color: #fff;
-  box-shadow: 1px 1px #c8b6e4;
-  color: #764abc;
-  border: 1px solid #c8b6e4;
+  background-color: var(--main-white);
+  box-shadow: 1px 1px var(--background-light-purple);
+  color: var(--background-dark-purple);
+  border: 1px solid var(--background-light-purple);
   width: 100px;
   border-radius: 3px;
   padding: 4px;
@@ -61,6 +61,6 @@
 }
 
 button:hover {
-  background-color: #764abc;
-  color: #fff;
+  background-color: var(--background-dark-purple);
+  color: var(--main-white);
 }

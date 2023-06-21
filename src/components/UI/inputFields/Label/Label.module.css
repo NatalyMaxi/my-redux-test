@@ -1,0 +1,7 @@
+.label {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 16px;
+  color: var(--background-dark-purple);
+  cursor: pointer;
+}

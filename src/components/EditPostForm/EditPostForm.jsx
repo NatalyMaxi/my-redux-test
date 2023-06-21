@@ -6,6 +6,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 import { postUpdated } from '../../redux/posts/postsSlice';
 
+import Input from '../UI/inputFields/Input/Input';
+import Label from '../UI/inputFields/Label/Label';
+import Textarea from '../UI/inputFields/Textarea/Textarea';
+import ButtonSubmit from '../UI/button/ButtonSubmit/ButtonSubmit';
+
 const EditPostForm = () => {
   const params = useParams()
   const { postId } = params
@@ -36,32 +41,30 @@ const EditPostForm = () => {
     <section className={classes.editPostForm}>
       <h2 className={classes.title}>Edit Post</h2>
       <form className={classes.form}>
-        <label htmlFor='postTitle'>Post Title:</label>
-        <input
-          className={classes.input}
+        <Label htmlFor='postTitle'>Post Title:</Label>
+        <Input
           type='text'
           id='postTitle'
           name='postTitle'
           spellheck='true'
+          maxLength='70'
           value={title}
           onChange={onTitleChanged}
         />
-        <label htmlFor='postContent'>Content:</label>
-        <textarea
-          className={classes.textarea}
+        <Label htmlFor='postContent'>Content:</Label>
+        <Textarea
           id='postContent'
           name='postContent'
           spellheck='true'
           value={content}
           onChange={onContentChanged}
         />
-        <button
-          className={!canSave ? `${classes.button} ${classes.buttonDisabled}` : classes.button}
-          type='button'
+        <ButtonSubmit
+          type='submit'
           onClick={onSavePostClicked}
-          disabled={!canSave}>
+          disabled={canSave ? false : true}>
           Save Post
-        </button>
+        </ButtonSubmit>
       </form>
     </section>
   )

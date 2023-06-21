@@ -1,112 +1,27 @@
 .addPostForm {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .title {
   font-size: 25px;
-  color: #764abc;
+  color: var(--background-dark-purple);
   margin: 20px 0;
+  align-self: center;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   width: 100%;
-  max-width: 700px;
 }
 
-.label {
-  color: #6b6b7a;
-}
-
-.input {
-  align-items: center;
-  height: 34px;
+.option {
   font-weight: 500;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 16px;
-  border-radius: 3px;
-  color: #6b6b7a;
-  border: solid 1px #c8b6e4;
-  padding: 5px 10px;
+  color: var(--text-gray);
 }
 
-.textarea {
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  border-radius: 3px;
-  color: #6b6b7a;
-  border: solid 1px #c8b6e4;
-  padding: 5px 10px;
-}
-
-.inputSelect {
-  height: 44px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  border-radius: 3px;
-  color: #6b6b7a;
-  border: solid 1px #c8b6e4;
-  padding: 5px 10px;
-}
-
-.input:focus,
-.textarea:focus,
-.inputSelect:focus {
-  outline: none;
-  border: solid 1px #764abc;
-}
-
-.button {
-  background-color: #fff;
-  color: #764abc;
-  box-shadow: 1px 1px #c8b6e4;
-  border: 1px solid #764abc;
-  width: 150px;
-  border-radius: 3px;
-  padding: 8px 14px;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-.button:hover {
-  background-color: #764abc;
-  color: #fff;
-}
-
-.buttonDisabled,
-.buttonDisabled:hover {
-  background-color: #fff;
-  border: 1px solid #c8b6e4;
-  color: #764abc;
-  box-shadow: none;
-  cursor: default;
-}
-
-::-webkit-input-placeholder {
-  color: #fff;
-}
-::-moz-placeholder {
-  color: #fff;
-} /* Firefox 19+ */
-:-moz-placeholder {
-  color: #fff;
-} /* Firefox 18- */
-:-ms-input-placeholder {
-  color: #fff;
-}
-
-input[type='search']::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  width: 22px;
-  height: 22px;
-  background: url(../../images/close.png);
-  background-position: center;
-  background-size: cover;
-  margin-right: 1;
-  cursor: pointer;
-}

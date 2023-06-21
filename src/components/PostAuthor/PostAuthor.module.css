@@ -3,5 +3,5 @@
   font-size: 13px;
   line-height: 16px;
   margin: 0;
-  color: #764abc;
+  color: var(--background-dark-purple);
 }

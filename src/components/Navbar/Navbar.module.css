@@ -3,7 +3,7 @@
   align-items: center;
   gap: 30px;
   height: 90px;
-  background-color: #764abc;
+  background-color: var(--background-dark-purple);
   box-sizing: border-box;
 }
 
@@ -22,13 +22,13 @@
 }
 
 .nav__link {
-  color: black;
+  color: var(--main-black);
   text-decoration: none;
 }
 
 .nav__link_active {
-  color: black;
+  color: var(--main-black);
   font-weight: 500;
   text-decoration: none;
-  text-shadow: 1px 1px 4px white, 0 0 1em white, 0 0 0.2em white;
+  text-shadow: 1px 1px 4px var(--main-white), 0 0 1em var(--main-white), 0 0 0.2em var(--main-white);
 }
