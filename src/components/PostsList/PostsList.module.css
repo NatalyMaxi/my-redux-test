@@ -97,3 +97,19 @@ button:hover {
   background-color: var(--background-dark-purple);
   color: var(--main-white);
 }
+
+.enter {
+  transform: translateX(-350px);
+}
+.enterActive {
+  transform: translateX(0);
+  transition: all 500ms ease-in;
+}
+.exit {
+  opacity: 1;
+  /* transform: translateX(0); */
+}
+.exitActive {
+  transform: translateX(-350px);
+  transition: all 500ms ease-in;
+}
