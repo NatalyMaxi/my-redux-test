@@ -1,4 +1,4 @@
-import classes from './AddPostForm.module.css';
+import classes from './AddPostPopup.module.css';
 
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,13 +10,14 @@ import Label from '../UI/inputFields/Label/Label';
 import Textarea from '../UI/inputFields/Textarea/Textarea';
 import Select from '../UI/inputFields/Select/Select';
 import ButtonSubmit from '../UI/button/ButtonSubmit/ButtonSubmit';
+import MyModal from '../UI/MyModal/MyModal';
+import Form from '../UI/Form/Form';
 
-const AddPostForm = ({ setVisible }) => {
+const AddPostPopup = ({ visible, setVisible }) => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [userId, setUserId] = useState('')
   const dispatch = useDispatch()
-
   const users = useSelector(state => state.users)
 
   const onTitleChanged = e => setTitle(e.target.value)
@@ -35,9 +36,8 @@ const AddPostForm = ({ setVisible }) => {
   const canSave = Boolean(title) && Boolean(content) && Boolean(userId)
 
   return (
-    <section className={classes.addPostForm}>
-      <h2 className={classes.title}>Add a New Post</h2>
-      <form className={classes.form}>
+    <MyModal visible={visible} setVisible={setVisible}>
+      <Form formTitle='Add a New Post' name='addNewPost'>
         <Label htmlFor='postTitle'>Post Title:</Label>
         <Input
           type='text'
@@ -76,9 +76,9 @@ const AddPostForm = ({ setVisible }) => {
           disabled={canSave ? false : true}>
           Save Post
         </ButtonSubmit>
-      </form>
-    </section>
+      </Form>
+    </MyModal>
   )
 }
 
-export default AddPostForm;
+export default AddPostPopup;

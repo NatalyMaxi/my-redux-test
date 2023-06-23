@@ -5,17 +5,11 @@
   gap: 25px;
 }
 
-.postsList {
+.postsPageList {
   display: flex;
   flex-direction: column;
   gap: 15px;
   width: 100%;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .title {
@@ -24,78 +18,10 @@
   color: var(--background-dark-purple);
 }
 
-.post {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  box-shadow: 2px 1px 4px var(--background-purple);
-  border-radius: 6px;
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
-.postItems {
+.postsPageItems {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.postItem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-width: 100px;
-  width: max-content;
-  gap: 15px;
-  border-radius: 3px;
-  padding: 2px 4px;
-}
-
-.postTitle {
-  font-size: 18px;
-  color: var(--text-gray);
-  margin: 0;
-}
-
-.postContent {
-  width: 100%;
-  font-size: 16px;
-  margin: 13px 0;
-  color: var(--text-gray);
-}
-
-.buttonContainer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-end;
-}
-
-.viewButton {
-  display: flex;
-  align-self: flex-end;
-  width: max-content;
-  text-decoration: none;
-}
-
-.viewButton:hover {
-  background-color: var(--background-dark-purple);
-}
-
-.button {
-  background-color: var(--main-white);
-  box-shadow: 1px 1px var(--background-light-purple);
-  color: var(--background-dark-purple);
-  border: 1px solid var(--background-light-purple);
-  width: 100px;
-  border-radius: 3px;
-  padding: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--background-dark-purple);
-  color: var(--main-white);
 }
 
 .enter {

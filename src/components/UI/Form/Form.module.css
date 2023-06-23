@@ -1,19 +1,13 @@
-.editPostForm {
+.form {
   display: flex;
   flex-direction: column;
   width: 100%;
+  gap: 15px;
 }
 
-.title {
+.formTitle {
   font-size: 25px;
   color: var(--background-dark-purple);
   margin: 20px 0;
   align-self: center;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
 }
